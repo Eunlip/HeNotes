@@ -1,7 +1,12 @@
-export default function ArchiveButton({ onArchive }) {
+export default function ArchiveButton({ id, children, onArchive }) {
 	return (
-		<button onClick={onArchive} className='rounded-lg py-2 px-5 text-[#F5F5F5] bg-[#2563EB]'>
-			Archive
+		<button
+			onClick={() => onArchive(id)}
+			className={`rounded-lg py-2 ${
+				children === 'UnArchive' ? 'px-[21px]' : 'px-8'
+			} text-[#F5F5F5] bg-[#2563EB]`}
+		>
+			{children}
 		</button>
 	);
 }

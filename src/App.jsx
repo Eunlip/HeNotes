@@ -1,3 +1,4 @@
+import Footer from './layout/Footer';
 import Header from './layout/Header';
 import MainSection from './layout/MainSection';
 
@@ -6,6 +7,7 @@ function App() {
 		<div className='container h-screen mx-auto font-Inter'>
 			<Header />
 			<MainSection />
+			<Footer />
 		</div>
 	);
 }

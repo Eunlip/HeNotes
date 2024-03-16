@@ -4,7 +4,7 @@ import rectangle from '../assets/images/rectangle-10.png';
 
 export default function Header() {
 	return (
-		<header className='container h-screen px-5 mx-auto'>
+		<header className='container px-5 mx-auto lg:h-screen '>
 			<img className='relative z-20' src={logo} alt='brand logo' />
 			<div className='flex flex-col items-center justify-center md:flex-row md:justify-between'>
 				<div className='relative z-20 flex flex-col items-center gap-3 mt-10 md:items-start'>

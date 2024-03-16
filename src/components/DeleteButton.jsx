@@ -1,6 +1,6 @@
-export default function DeleteButton({ onDelete }) {
+export default function DeleteButton({ id, onDelete }) {
 	return (
-		<button onClick={onDelete} className='rounded-lg py-2 px-6 text-[#F5F5F5] bg-[#EF4444]'>
+		<button onClick={() => onDelete(id)} className='rounded-lg py-2 px-8 text-[#F5F5F5] bg-red-500'>
 			Delete
 		</button>
 	);
