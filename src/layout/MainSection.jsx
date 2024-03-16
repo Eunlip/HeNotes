@@ -1,16 +1,16 @@
 import NoteInput from '../components/NoteInput';
 import rectangleMain from '../assets/images/rectangle-main.png';
-import NoteItem from '../components/NoteItem';
 
 export default function MainSection() {
 	return (
-		<main className='container h-screen py-44 lg:py-0'>
+		<main id='notesInput' className='container h-screen py-10 md:py-60 xl:py-1'>
 			<img className='absolute left-0 z-0' src={rectangleMain} alt='' />
-			<h2 className='relative z-20 mt-10 text-4xl font-bold text-center text-white'>
-				Make your notes below
-			</h2>
-			<NoteInput />
-      <NoteItem />
+			<div className='relative z-10'>
+				<h2 className='z-20 mt-10 text-2xl font-bold text-center text-white sm:text-4xl'>
+					Make your notes below
+				</h2>
+				<NoteInput />
+			</div>
 		</main>
 	);
 }

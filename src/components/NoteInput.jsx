@@ -45,36 +45,38 @@ class NoteInput extends Component {
 
 	render() {
 		return (
-			<div className='relative z-20 flex items-center justify-center py-10'>
+			<div className='z-20 flex items-center justify-center pt-5 '>
 				<form onSubmit={this.onSubmitHandler}>
-					<div className='flex flex-col gap-2 mb-5'>
-						<input
-							className='px-5 py-3 w-[35rem] rounded-md bg-[#363C4E] text-gray-200 focus:outline-none placeholder:text-gray-400 border border-slate-600'
-							type='text'
-							placeholder='Input your title here...'
+					<div className='flex flex-col items-center justify-center w-[25rem]  '>
+						<div className='flex flex-col gap-2 mb-5'>
+							<input
+								className='px-5 py-3 sm:w-[35rem] w-[22rem] rounded-md bg-[#363C4E] text-gray-200 focus:outline-none placeholder:text-gray-400 border border-slate-600'
+								type='text'
+								placeholder='Input your title here...'
+								required
+								value={this.state.title}
+								onChange={this.onTitleChange}
+							/>
+							<p
+								className={`text-[12px] font-medium text-end  pe-1 ${
+									this.state.charLimit < 6 ? 'text-red-500' : 'text-gray-400'
+								}`}
+							>
+								Remaining characters: {this.state.charLimit}
+							</p>
+						</div>
+						<textarea
+							rows={7}
+							className='sm:w-[35rem] w-[22rem] border border-slate-600 focus:outline-none placeholder:text-gray-400 text-gray-200 px-5 py-5 bg-[#363C4E] rounded-md'
+							placeholder='Input your note here...'
 							required
-							value={this.state.title}
-							onChange={this.onTitleChange}
-						/>
-						<p
-							className={`text-[12px] font-medium text-end  pe-1 ${
-								this.state.charLimit < 6 ? 'text-red-500' : 'text-gray-400'
-							}`}
-						>
-							Remaining characters: {this.state.charLimit}
-						</p>
+							value={this.state.body}
+							onChange={this.onBodyChange}
+						></textarea>
+						<button className='block rounded-lg mt-5 py-2 px-6 sm:w-[35rem] w-[22rem] text-sm sm:text-lg bg-indigo-600 text-[#F5F5F5] hover:bg-indigo-500'>
+							Create
+						</button>
 					</div>
-					<textarea
-						rows={7}
-						className='w-[35rem] border border-slate-600 focus:outline-none placeholder:text-gray-400 text-gray-200 px-5 py-5 bg-[#363C4E] rounded-md'
-						placeholder='Input your note here...'
-						required
-						value={this.state.body}
-						onChange={this.onBodyChange}
-					></textarea>
-					<button className='block rounded-lg mt-5 py-2 px-6 w-[35rem] text-sm sm:text-lg bg-indigo-600 text-[#F5F5F5] hover:bg-indigo-500'>
-						Create
-					</button>
 				</form>
 			</div>
 		);
