@@ -14,5 +14,20 @@ export default {
 			Inter: ['"Inter", sans-serif'],
 		},
 	},
-	plugins: [],
+	plugins: [
+		function({addBase}) {
+			addBase({
+				'::-webkit-scrollbar': {
+					backgroundColor: '#50727B'
+				},
+
+				'::-webkit-scrollbar-thumb': {
+          backgroundColor: '#d4d4d4',
+          '&:hover': {
+            backgroundColor: '#e5e5e5',
+          },
+        },
+			})
+		}
+	],
 };

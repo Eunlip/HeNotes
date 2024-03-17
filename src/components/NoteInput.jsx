@@ -18,13 +18,12 @@ class NoteInput extends Component {
 	}
 
 	onTitleChange(e) {
-		let charLimit = MAX_LENGTH - e.target.value.length;
-
-		if (charLimit < 0) charLimit = 0;
+		const { value } = e.target;
+		const charLimit = MAX_LENGTH - value.length;
 
 		this.setState({
-			title: e.target.value.slice(0, MAX_LENGTH),
-			charLimit: charLimit,
+			title: value.slice(0, MAX_LENGTH),
+			charLimit: charLimit < 0 ? 0 : charLimit,
 		});
 	}
 
@@ -73,7 +72,7 @@ class NoteInput extends Component {
 							value={this.state.body}
 							onChange={this.onBodyChange}
 						></textarea>
-						<button className='block rounded-lg mt-5 py-2 px-6 sm:w-[35rem] w-[22rem] text-sm sm:text-lg bg-indigo-600 text-[#F5F5F5] hover:bg-indigo-500'>
+						<button className='block rounded-lg mt-5 py-2 px-6 sm:w-[35rem] w-[22rem] text-sm sm:text-lg bg-[#344955] text-[#F5F5F5] hover:bg-[#3a515e]'>
 							Create
 						</button>
 					</div>
@@ -83,3 +82,5 @@ class NoteInput extends Component {
 	}
 }
 export default NoteInput;
+
+// 344955
