@@ -5,8 +5,14 @@ import rectangle from '../assets/images/rectangle-10.png';
 
 export default function Header() {
 	return (
-		<header className='container px-5 mx-auto xl:h-screen '>
-			<img className='relative z-20 md:mx-0' src={logo} alt='brand logo' />
+		<header className='container px-5 mx-auto'>
+			<div className='relative z-20 flex items-center justify-between'>
+				<img className='md:mx-0' src={logo} alt='brand logo' />
+				<nav className='hidden gap-10 text-lg font-medium cursor-pointer sm:flex text-neutral-200'>
+					<Link className='hover:text-neutral-300' to='activeNotes' smooth={true} duration={500}>Active Notes</Link>
+					<Link className='hover:text-neutral-300' to='archiveNotes' smooth={true} duration={500}>Archive Notes</Link>
+				</nav>
+			</div>
 			<div className='flex flex-col items-center justify-center md:flex-row md:justify-between'>
 				<div className='relative z-20 flex flex-col items-center gap-3 mt-10 md:items-start'>
 					<h1 className='text-4xl font-semibold leading-snug tracking-wide text-center md:text-start sm:text-5xl sm:leading-normal text-neutral-100'>
@@ -36,5 +42,3 @@ export default function Header() {
 		</header>
 	);
 }
-
-// 608B8F

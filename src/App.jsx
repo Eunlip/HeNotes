@@ -1,9 +1,7 @@
 import { Component } from 'react';
-import Header from './layout/Header';
-import MainSection from './layout/MainSection';
+import { Header, MainSection, Footer } from './layout';
 import { getInitialData } from './utils';
 import swal from 'sweetalert';
-import Footer from './layout/Footer';
 
 class App extends Component {
 	constructor(props) {
@@ -78,7 +76,7 @@ class App extends Component {
 	onSearchHandler(value) {
 		this.setState({ searchKeywords: value });
 	}
-  
+
 	filteredNotes(notes, searchKeywords) {
 		return notes.filter((note) => {
 			const title = note.title.toLowerCase();
@@ -92,7 +90,7 @@ class App extends Component {
 		const { notes, archivedNotes, searchKeywords } = this.state;
 
 		return (
-			<div className='mx-auto 2xl:px-14 font-Inter'>
+			<div className='font-Inter'>
 				<Header />
 				<MainSection
 					notes={this.filteredNotes(notes, searchKeywords)}
