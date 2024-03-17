@@ -3,7 +3,7 @@ import Header from './layout/Header';
 import MainSection from './layout/MainSection';
 import { getInitialData } from './utils';
 import swal from 'sweetalert';
-// import Footer from './layout/Footer';
+import Footer from './layout/Footer';
 
 class App extends Component {
 	constructor(props) {
@@ -28,7 +28,7 @@ class App extends Component {
 
 		swal({
 			title: 'Are you sure?',
-			text: 'Once deleted, You cannot recover this record again!',
+			text: 'You cannot recover this record again!',
 			icon: 'warning',
 			buttons: true,
 			dangerMode: true,
@@ -78,7 +78,7 @@ class App extends Component {
 	onSearchHandler(value) {
 		this.setState({ searchKeywords: value });
 	}
-
+  
 	filteredNotes(notes, searchKeywords) {
 		return notes.filter((note) => {
 			const title = note.title.toLowerCase();
@@ -102,6 +102,7 @@ class App extends Component {
 					onArchive={this.onArchiveHandler}
 					onSearch={this.onSearchHandler}
 				/>
+				<Footer />
 			</div>
 		);
 	}

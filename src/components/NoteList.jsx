@@ -4,7 +4,7 @@ export default function NoteList({ notes, onDelete, onArchive, isArchive }) {
 	return (
 		<>
 			{notes.length ? (
-				<div className='grid items-baseline grid-cols-4 gap-3 mt-5'>
+				<div className='grid items-baseline mt-2 sm:mt-5 lg:gap-3 sm:gap-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
 					{notes.map((note) => (
 						<NoteItem
 							key={note.id}
@@ -17,7 +17,7 @@ export default function NoteList({ notes, onDelete, onArchive, isArchive }) {
 					))}
 				</div>
 			) : (
-				<p className='my-10 text-neutral-100'>No notes found</p>
+				<p className='my-10 text-center sm:text-start text-neutral-100'>No notes found</p>
 			)}
 		</>
 	);

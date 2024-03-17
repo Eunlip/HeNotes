@@ -20,7 +20,7 @@ class SearchField extends Component {
 		return (
 			<div>
 				<input
-					className='px-5 py-3 sm:w-96 w-[22rem] rounded-md bg-[#363C4E] text-gray-200 focus:outline-none placeholder:text-gray-400 border border-slate-600'
+					className='px-5 py-3 w-[22rem] rounded-md bg-[#363C4E] text-gray-200 focus:outline-none placeholder:text-gray-400 border border-slate-600'
 					type='text'
 					placeholder='Find your notes here...'
 					value={this.state.keywords}
