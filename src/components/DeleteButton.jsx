@@ -1,10 +1,12 @@
+import { FaTrash } from 'react-icons/fa6';
+
 export default function DeleteButton({ id, onDelete }) {
 	return (
 		<button
 			onClick={() => onDelete(id)}
-			className='font-medium py-2 w-screen px-10 text-neutral-100 bg-[#50727B]'
+			className='flex justify-center text-2xl font-medium py-2 w-screen  text-neutral-100 bg-[#50727B]'
 		>
-			Delete
+			<FaTrash />
 		</button>
 	);
 }

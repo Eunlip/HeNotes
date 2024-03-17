@@ -1,6 +1,7 @@
 import DeleteButton from './DeleteButton';
 import ArchiveButton from './ArchiveButton';
 import { showFormattedDate } from '../utils';
+import { BiSolidArchiveIn, BiSolidArchiveOut } from 'react-icons/bi';
 
 export default function NoteItem({ id, title, body, createdAt, onDelete, onArchive, isArchive }) {
 	const formattedDate = showFormattedDate(createdAt);
@@ -14,7 +15,7 @@ export default function NoteItem({ id, title, body, createdAt, onDelete, onArchi
 			<div className='absolute bottom-0 left-0 right-0 flex'>
 				<DeleteButton id={id} onDelete={onDelete} />
 				<ArchiveButton id={id} onArchive={onArchive}>
-					{!isArchive ? 'Archive' : 'UnArchive'}
+					{!isArchive ? <BiSolidArchiveIn className=''/> : <BiSolidArchiveOut />}
 				</ArchiveButton>
 			</div>
 		</div>

@@ -1,6 +1,9 @@
 import { Component } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const MAX_LENGTH = 50;
+
+const notify = () => toast('Note added!', { icon: '📝' });
 
 class NoteInput extends Component {
 	constructor(props) {
@@ -34,6 +37,8 @@ class NoteInput extends Component {
 	onSubmitHandler(e) {
 		e.preventDefault();
 		this.props.addNote(this.state);
+
+		notify();
 
 		this.setState({
 			title: '',
@@ -75,6 +80,7 @@ class NoteInput extends Component {
 						<button className='block rounded-lg mt-5 py-2 px-6 sm:w-[35rem] w-[22rem] text-sm sm:text-lg bg-[#344955] text-[#F5F5F5] hover:bg-[#3a515e]'>
 							Create
 						</button>
+						<Toaster position='top-right' toastOptions={{}} />
 					</div>
 				</form>
 			</div>

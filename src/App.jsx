@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Header from './layout/Header';
 import MainSection from './layout/MainSection';
 import { getInitialData } from './utils';
+import swal from 'sweetalert';
 // import Footer from './layout/Footer';
 
 class App extends Component {
@@ -25,7 +26,20 @@ class App extends Component {
 		const notes = this.state.notes.filter((note) => note.id !== id);
 		const archivedNotes = this.state.archivedNotes.filter((note) => note.id !== id);
 
-		this.setState({ notes, archivedNotes });
+		swal({
+			title: 'Are you sure?',
+			text: 'Once deleted, You cannot recover this record again!',
+			icon: 'warning',
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				this.setState({ notes, archivedNotes });
+				swal('Poof! Successfully deleted your note', {
+					icon: 'success',
+				});
+			}
+		});
 	}
 
 	onArchiveHandler(id) {
