@@ -92,7 +92,7 @@ class App extends Component {
 		const { notes, archivedNotes, searchKeywords } = this.state;
 
 		return (
-			<div className='container w-screen h-screen mx-auto 2xl:px-14 font-Inter'>
+			<div className='mx-auto 2xl:px-14 font-Inter'>
 				<Header />
 				<MainSection
 					notes={this.filteredNotes(notes, searchKeywords)}

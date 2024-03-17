@@ -25,7 +25,7 @@ export default function Header() {
 					</Link>
 				</div>
 				<img
-					className='relative right-0 z-10 mt-10 w-96 md:w-80 lg:w-auto'
+					className='relative z-10 mt-10 -left-4 sm:right-0 w-96 md:w-80 lg:w-auto'
 					src={heroImage}
 					alt='hero image'
 				/>
