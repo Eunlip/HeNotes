@@ -9,8 +9,12 @@ export default function Header() {
 			<div className='relative z-20 flex items-center justify-between'>
 				<img className='md:mx-0' src={logo} alt='brand logo' />
 				<nav className='hidden gap-10 text-lg font-medium cursor-pointer sm:flex text-neutral-200'>
-					<Link className='hover:text-neutral-300' to='activeNotes' smooth={true} duration={500}>Active Notes</Link>
-					<Link className='hover:text-neutral-300' to='archiveNotes' smooth={true} duration={500}>Archive Notes</Link>
+					<Link className='hover:text-neutral-300' to='activeNotes' smooth={true} duration={500}>
+						Active Notes
+					</Link>
+					<Link className='hover:text-neutral-300' to='archiveNotes' smooth={true} duration={500}>
+						Archive Notes
+					</Link>
 				</nav>
 			</div>
 			<div className='flex flex-col items-center justify-center md:flex-row md:justify-between'>
@@ -21,14 +25,12 @@ export default function Header() {
 					<p className='md:text-xl text-sm font-medium text-[#9ca3af]'>
 						Simplifying Note-Taking for You
 					</p>
-					<Link
-						to='notesInput'
-						smooth={true}
-						duration={500}
+					<a
+						href='https://henotes-app.vercel.app/'
 						className='mt-10 font-medium cursor-pointer rounded-lg py-2 px-6 text-sm sm:text-lg bg-[#608B8F] text-[#F5F5F5] hover:bg-[#68969a]'
 					>
 						Try Now !
-					</Link>
+					</a>
 				</div>
 				<img
 					className='relative z-10 mt-10 -left-4 sm:right-0 w-96 md:w-80 lg:w-auto'
